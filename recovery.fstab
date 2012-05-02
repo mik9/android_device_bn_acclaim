@@ -1,7 +1,7 @@
 # mount point	fstype    device    	[device2]
 
-/boot       mtd         /dev/block/platform/mmci-omap-hs.1/by-name/boot
-/recovery   mtd         /dev/block/platform/mmci-omap-hs.1/by-name/recovery
+/boot       emmc        /dev/block/platform/mmci-omap-hs.1/by-name/boot
+/recovery   emmc        /dev/block/platform/mmci-omap-hs.1/by-name/recovery
 /bootdata   vfat        /dev/block/platform/mmci-omap-hs.1/by-name/bootdata
 /cache      ext4        /dev/block/platform/mmci-omap-hs.1/by-name/cache
 /data       ext4        /dev/block/platform/mmci-omap-hs.1/by-name/userdata
