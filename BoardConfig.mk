@@ -27,12 +27,13 @@ ifdef OMAP_ENHANCEMENT
 COMMON_GLOBAL_CFLAGS += -DOMAP_ENHANCEMENT -DTARGET_OMAP4
 endif
 
-# BOARD_HAS_SDCARD_INTERNAL := true
-# BOARD_SDCARD_DEVICE_PRIMARY := /dev/block/platform/omap/omap_hsmmc.1/by-name/media
-# BOARD_SDCARD_DEVICE_INTERNAL := /dev/block/platform/omap/omap_hsmmc.1/by-name/media
+BOARD_HAS_SDCARD_INTERNAL := true
+BOARD_SDCARD_DEVICE_PRIMARY := /dev/block/platform/mmci-omap-hs.0/by-num/p1
+BOARD_SDCARD_DEVICE_INTERNAL := /dev/block/platform/mmci-omap-hs.1/by-name/media
 # BOARD_VOLD_MAX_PARTITIONS := 32
 # BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
-# TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/virtual/android_usb/android0/f_mass_storage/lun/file"
+TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/usb_mass_storage/lun0/file"
+BOARD_UMS_LUNFILE := "/sys/devices/platform/usb_mass_storage/lun0/file"
 
 # Connectivity - Wi-Fi
 BOARD_WPA_SUPPLICANT_DRIVER      := NL80211
@@ -66,3 +67,5 @@ TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := device/bn/acclaim/releasetools/ota_
 TARGET_RELEASETOOL_IMG_FROM_TARGET_SCRIPT := device/bn/acclaim/releasetools/img_from_target_files
 
 BOARD_CUSTOM_BOOTIMG_MK := device/bn/acclaim/releasetools/BootableImages.mk
+TARGET_PREBUILT_RECOVERY_KERNEL := device/bn/acclaim/recovery_kernel
+BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/bn/acclaim/acclaim_recovery_keys.c
