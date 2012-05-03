@@ -265,7 +265,7 @@ def BuildBootableImage(sourcedir):
 
   img.seek(os.SEEK_SET, 0)
   data = img.read()
-  cyanboot = open("flashing_boot_emmc.img", "rb").read()
+  cyanboot = open("../../../../device/bn/acclaim/releasetools/flashing_boot_emmc.img", "rb").read()
   offset = 512*1024 - len(cyanboot)
 
   ramdisk_img.close()
